@@ -5,12 +5,12 @@
 <title>Dar alta</title>
 </head>
 <body>
-<!--  -->
-<form action="" method="get">
+<!--  -->                            
+<form action="" method="get" enctype="multipart/form-data">
   <label>Nombre:</label>
-  <input type="text" name="nombre" id="nombre" value=""/>
+  <input type="text" name="nombre" id="nombre" value="" required="required"/> <br/>
   <label>Apellidos</label>
-  <input type="text" name="apellidos" id="apellidos" value=""/>
+  <input type="text" name="apellidos" id="apellidos" value="" required="required"/><br/>
   <label>Día:</label>
   <select name="dia" id="dia">
     <option value="1">1</option>
@@ -45,6 +45,7 @@
     <option value="30">30</option>  
     <option value="31">31</option>    
   </select>
+  <br/>
   <label for="mes">Mes:</label>
   <select name="mes" id="mes">
     <option value="1">Ene</option>
@@ -52,30 +53,78 @@
     <option value="3">Mar</option>
     <option value="4">Abr</option>
     <option value="5">May</option>
-    <option value="6">Jun</option>
-     <option value="7">Jul</option>
+    <option value="6" selected="selected">Jun</option>
+    <option value="7">Jul</option>
     <option value="8">Ago</option>
     <option value="9">Sep</option>
     <option value="10">Oct</option>
     <option value="11">Nov</option>
     <option value="12">Dic</option>
   </select>
-  
-	 <label for="year">Año:</label>
-	 <input type="text" name="year" id="year"/>
-  <input type="submit" name="enviar" id="enviar" value="Enviar->" />
-  
-  
+  <br/>
+ <label for="year">Año:</label>
+ <input type="text" name="year" id="year"/>
+  <br/>
   <input type="radio" name="genero" value="masculino" id="masc"/>
   <label for="masc">Masculino</label>
-  
+ <br/>
   <input type="radio" name="genero" value="femenino" id="feme"/>
   <label for="feme">Femenino</label>
-  
+  <br/>
+  <label for="fechaNac"></label>
   <input type="date" id="fechaNac" name="fechaNac" min="1997-04-19" max="2015-04-20"/>
+  <br/>
   <label for="nroHijos"></label>
   <input type="number" min="0" max="100" step="10" id="nroHijos" name="nroHijos"/>
-  </form>
+  <br/>
+  <label for="madrileno">¿Nacido en Madrid ?</label>
+  <input type="checkbox" name="madrileno" id="madrileno" value="madrileno"/> 
+  
+   <br/>
+   <!-- Control u objeto para subir un archivo o foto -->	
+   <label for="foto">Foto:</label>
+   <input type="file" name="foto" id="foto"/> 
+  <br/>
+  <input type="hidden" name="parametro" value="5"/>
+  <!-- select con agrupamiento -->
+  <br/>
+  
+  <fieldset style="padding:2em;">
+  <legend >Geografía</legend>
+  <label for="pais">Seleccione un país:</label>
+  <select name="pais" id="pais" disabled="disabled"> 
+    <optgroup label="Europa">
+     <option value="sp" selected="selected">España</option>
+     <option value="pt"> Portugal</option>
+     <option value="fr">Francia</option>
+    </optgroup> 
+    <optgroup label="América">
+      <option value="co">Colombia</option>
+      <option value="mx">México</option>
+    </optgroup> 
+   </select>
+   <br/> 
+   <label for="provincias">Provincias:</label> 
+   <select name="provincias" id="provincias" size="3" multiple="multiple"> <!-- size: dice cuantos se muestran -->
+      <option value="mad">Madrid</option>
+      <option value="bar">Barcelona</option>
+      <option value="cad">Cádiz</option>
+      <option value="ali">Alicante</option>
+      <option value="pal">Palencia</option>
+      <option value="mal">Málaga</option>
+   </select>
+   </fieldset>
+   <br/>
+   
+   <label for="correo">Correo electrónico</label>
+   <input type="email" name="correo" id="correo" placeholder="xxx@xxx.xx" />
+   <br/>
+  <!-- botones -->
+  
+  <input type="submit" name="enviar" id="enviar" value="Enviar->" />
+  <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar"/> 
+  
+ </form>
 </body>
 </html>
 
